@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: #2d3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    color: #000;
+    justify-content: center;
+    gap: 50px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.5s;
+}
+
+nav ul li a::before {
+    top: 0;
+    left: 0;
+}
+
+nav ul li a::after {
+    bottom: 0;
+    right: 0;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    transition: width 0.25s ease-in-out;
+    color: #c3272f;
+}
+
+
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: #c3272f;
+    }
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    transition: width 0.25s ease-in-out 0.25s;
+    color: #c3272f;
+}
+
+.btn {
+    background: #c3272f;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    object-fit: contain;
+
+    video {
+        width: 100%;
+    }
+
+}
+
+.hero_text {
+    padding-left: 10%;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    max-width: 100%;
+    /* filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); */
+    /* backdrop-filter: blur(5px) brightness(0.8) contrast(120%); */
+    background: linear-gradient(11deg, #000000d6 24%, transparent 92%, transparent 100%);
+    text-align: left;
+    padding-top: 31%;
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+.packages,
+.about,
+.testimonials,
+.news,
+.gallery {
+
+    text-align: center;
+}
+
+.packages h2 {
+    text-align: center;
+}
+
+.package-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.package-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    width: 300px;
+}
+
+.gallery-images img {
+    width: 150px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#about {
+    height: 100vh;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.intro {
+    background-image: url(../images/introBackground.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        left: 0%;
+        right: 0%;
+    }
+
+}
+
+.intro-text h2 {
+    font-size: 3em;
+    line-height: 50px;
+    padding-top: 50%;
+}
+
+.svgs {
+    width: 80px;
+    color: #c3272f;
+    height: 100px;
+    margin-left: 25%;
+}
+
+.svgs h3 {
+    margin-left: 100px;
+}
+
+#svg {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.svg-bg {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+#Learn-more-btn {
+    background-color: #c3272f;
+    border-radius: 5px;
+    padding: 15px 25px;
+    border: none;
+    color: white;
+
+}
+
+.Learn-more-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.packages {
+    height: 80vh;
+    text-align: left;
+}
+
+#package-container {
+    margin-top: 100px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+    opacity: 1;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    height: 200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-weight: bold;
+    color: #00331a;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    font-size: 200px;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.feedback h2 {
+    text-align: center;
+}
+
+.f-content {
+    TEXT-ALIGN: CENTER;
+    DISPLAY: flex;
+    JUSTIFY-CONTENT: center;
+    FLEX-DIRECTION: column;
+    ALIGN-ITEMS: center;
+}
+
+/* From Uiverse.io by PapaUiiss404 */
+.card {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+/* instagram*/
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+}
+
+/* twitter*/
+.containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: .3s;
+}
+
+/* linkdin*/
+.containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: .3s;
+}
+
+/* Whatsapp*/
+.containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.5s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}

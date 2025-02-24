@@ -1,0 +1,199 @@
+[
+  {
+    "id": 1,
+    "category": "India",
+    "name": "Ooty & Coonoor Hill Retreat",
+    "destination": "Tamil Nadu, India",
+    "duration": "4 Days, 3 Nights",
+    "price": "₹55,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Toy Train Ride",
+      "Tea Plantation Tour",
+      "Boating"
+    ],
+    "accommodation": "Luxury Hill Resort",
+    "meals_included": true,
+    "transportation": "Private Car & Local Transfers",
+    "trending": true,
+    "images": [
+      "https://res.cloudinary.com/voyehomes/image/upload/w_1280,f_auto,c_scale/v1709103266/property/97/image/459d752b-2544-4810-b3f5-0ffb6a976736.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/17028634.jpg?k=9d9d282617fcecb1defb8cd05ed5437966c31e09ab5e473fe06b16e6df96e343&o=&hp=1"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "India",
+    "name": "Rameswaram & Kanyakumari Pilgrimage",
+    "destination": "Tamil Nadu, India",
+    "duration": "5 Days, 4 Nights",
+    "price": "₹60,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Temple Visit",
+      "Beach Walk",
+      "Sunrise & Sunset View"
+    ],
+    "accommodation": "Heritage Hotel",
+    "meals_included": true,
+    "transportation": "Train & Private Transfers",
+    "trending": false,
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmDW4DCiF2ROozI8ZWuz60BVREs_Tvd6WKsg&s",
+      "https://cliffhangersindia.com/wp-content/uploads/2024/04/2901629651_6f04b0c99e_c.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "India",
+    "name": "Leh-Ladakh Bike Expedition",
+    "destination": "Ladakh, India",
+    "duration": "7 Days, 6 Nights",
+    "price": "₹95,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Biking",
+      "Camping",
+      "Monastery Visits"
+    ],
+    "accommodation": "Guesthouses & Camps",
+    "meals_included": false,
+    "transportation": "Bike Rental & Local Transfers",
+    "trending": true,
+    "images": [
+   
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmDW4DCiF2ROozI8ZWuz60BVREs_Tvd6WKsg&s",
+      "https://cliffhangersindia.com/wp-content/uploads/2024/04/2901629651_6f04b0c99e_c.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "India",
+    "name": "Andaman Beach Paradise",
+    "destination": "Andaman & Nicobar Islands, India",
+    "duration": "6 Days, 5 Nights",
+    "price": "₹85,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Scuba Diving",
+      "Snorkeling",
+      "Beach Relaxation"
+    ],
+    "accommodation": "Beachfront Resort",
+    "meals_included": true,
+    "transportation": "Flights & Boat Transfers",
+    "trending": false,
+    "images": [
+      "path/to/andaman1.jpg",
+      "path/to/andaman2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "World",
+    "name": "Venice & Rome Heritage Tour",
+    "destination": "Italy",
+    "duration": "7 Days, 6 Nights",
+    "price": "₹2,10,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Gondola Ride",
+      "Historic Sightseeing",
+      "Wine Tasting"
+    ],
+    "accommodation": "Luxury Hotel",
+    "meals_included": false,
+    "transportation": "Round-trip Flights & Train Transfers",
+    "trending": true,
+    "images": [
+      "https://cdn.kimkim.com/files/a/content_articles/featured_photos/278bd92cb0814b59ebf8973ece1b96aaa3cbf9b1/big-5e7f6e6594c8771f9e9102dfa8610d3f.jpg",
+      "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/20/40/b8.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "World",
+    "name": "Iceland Northern Lights Expedition",
+    "destination": "Iceland",
+    "duration": "6 Days, 5 Nights",
+    "price": "₹3,50,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Northern Lights Viewing",
+      "Glacier Hiking",
+      "Hot Springs"
+    ],
+    "accommodation": "Glass Igloo Hotel",
+    "meals_included": true,
+    "transportation": "Flights & Private Transfers",
+    "trending": true,
+    "images": ["https://enchantedhoneymoons.com/wp-content/uploads/2021/07/the-northern-lights-Iceland.jpg","https://t3.ftcdn.net/jpg/04/19/92/02/360_F_419920263_cDPeZfOKGG7GhbmsxuyZmJac5OYuMaNo.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Honeymoon",
+    "name": "Bali Luxury Honeymoon",
+    "destination": "Indonesia",
+    "duration": "5 Days, 4 Nights",
+    "price": "₹1,80,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Private Beach Dinner",
+      "Waterfalls Tour",
+      "Spa Retreat"
+    ],
+    "accommodation": "Private Pool Villa",
+    "meals_included": true,
+    "transportation": "Round-trip Flights & Private Transfers",
+    "trending": false,
+    "images": [
+      "https://cdn.justluxe.com/articles/images/news/725Bali-Alila-Villas-Soori.jpg",
+      "https://www.tripplannersindia.com/assets/images/page/bali_honeymoon_1.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Honeymoon",
+    "name": "Switzerland Romantic Alps Tour",
+    "destination": "Switzerland",
+    "duration": "7 Days, 6 Nights",
+    "price": "₹3,80,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Skiing",
+      "Cable Car Ride",
+      "Chocolate Factory Visit"
+    ],
+    "accommodation": "Luxury Chalet",
+    "meals_included": true,
+    "transportation": "Flights & Train Transfers",
+    "trending": true,
+    "images": [
+      "path/to/switzerland1.jpg",
+      "path/to/switzerland2.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Family",
+    "name": "Dubai Family Vacation",
+    "destination": "UAE",
+    "duration": "6 Days, 5 Nights",
+    "price": "₹1,90,000/Person",
+    "currency": "INR",
+    "activities": [
+      "Desert Safari",
+      "Theme Parks",
+      "Burj Khalifa Visit"
+    ],
+    "accommodation": "Luxury Hotel",
+    "meals_included": false,
+    "transportation": "Round-trip Flights & Local Transfers",
+    "trending": true,
+    "images": [
+      "path/to/dubai1.jpg",
+      "path/to/dubai2.jpg"
+    ]
+  }
+]

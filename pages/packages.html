@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages</title>
+    <style>
+       /* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+/* Header & Footer */
+header, footer {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Area */
+.content {
+    width: 70%;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Package Cards */
+.package {
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.package:hover {
+    transform: scale(1.05);
+}
+
+.package img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Package Button */
+.package button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #ff5e62;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.package button:hover {
+    background: #e0474c;
+}
+
+/* Details Section */
+.details-container {
+    display: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: left;top:-11%;
+    h2{
+          
+    z-index: 12;
+    color: #c3272f;
+        width: fit-content;
+    }
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.image-gallery img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Booking Form */
+.booking-form {
+    display: none;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Booking Form Inputs & Button */
+.booking-form input,
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+/* Booking Button */
+.booking-form button {
+    background: #ff5e62;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition:  0.3s ease-in-out;
+}
+
+.booking-form button:hover {
+    background: #e0474c;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+.carousel {
+    position: relative;
+    margin: auto;overflow: hidden;height: 40vh;
+    text-align: center;object-fit: fill;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: -41%; 
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 5px;
+    transition: background  0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+    </style>
+</head>
+<body>
+    <header>Explore Our Best Tourism Packages</header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Available Tourism Packages</h2>
+            <div id="packages-container"></div>
+        </div>
+        <div class="content">
+            <div id="details-section" class="details-container">
+                
+            </div>
+            <h2>Select a Package</h2>
+                <p>Click on an image to see details.</p>
+        </div>
+    </div>
+
+    <footer>&copy; 2025 Travel Agency. All rights reserved.</footer>
+
+    <script>
+        async function loadPackages() {
+            try {
+                const response = await fetch('../json/packages.json');
+                const tourismPackages = await response.json();
+                const container = document.getElementById("packages-container");
+
+                container.innerHTML = ""; // Clear previous content
+
+                tourismPackages.forEach(pkg => {
+                    const packageDiv = document.createElement("div");
+                    packageDiv.className = "package";
+
+                    // Show only the first image
+                    let imageHTML = pkg.images?.length > 0 ? 
+                        `<img src="${pkg.images[0]}" alt="${pkg.name}" class="package-img">` : 
+                        `<img src="default-image.jpg" alt="${pkg.name}" class="package-img">`;
+
+                    packageDiv.innerHTML = `
+                        <h2>${pkg.name}</h2>
+                        ${imageHTML}
+                        <p><strong>Destination:</strong> ${pkg.destination}</p>
+                        <p><strong>Duration:</strong> ${pkg.duration}</p>
+                        <p><strong>Price:</strong> ${pkg.currency} ${pkg.price}</p>
+                        <button onclick='showDetails(${JSON.stringify(pkg).replace(/'/g, "&apos;").replace(/"/g, "&quot;")})'>View Details</button>
+                    `;
+                    container.appendChild(packageDiv);
+                });
+            } catch (error) {
+                console.error("Error loading tourism packages:", error);
+            }
+        }
+
+        function showDetails(pkg) {
+    const detailsSection = document.getElementById("details-section");
+    detailsSection.style.display = "block"; // Show details
+
+    let imagesHTML = "";
+    if (pkg.images?.length > 0) {
+        imagesHTML = `
+            <div class="carousel">
+                <button class="prev-btn" onclick="prevImage()">&#10094;</button>
+                <img id="carousel-image" src="${pkg.images[0]}" alt="${pkg.name}" class="carousel-img">
+                <button class="next-btn" onclick="nextImage()">&#10095;</button>
+            </div>
+            <p id="image-index">1 / ${pkg.images.length}</p>
+        `;
+    } else {
+        imagesHTML = `<img src="default-image.jpg" alt="${pkg.name}" class="detail-img">`;
+    }
+
+    detailsSection.innerHTML = `
+      <h2>${pkg.name}</h2>
+        ${imagesHTML}<div style="display:flex;gap:20%;"> <div> 
+        <p><strong>Destination:</strong> ${pkg.destination}</p>
+        <p><strong>Duration:</strong> ${pkg.duration}</p>
+        <p><strong>Price:</strong> ${pkg.currency} ${pkg.price}</p></div>
+        <div>
+        <p><strong>Activities:</strong> ${pkg.activities.join(", ")}</p>
+        <p><strong>Accommodation:</strong> ${pkg.accommodation}</p>
+        <p><strong>Transportation:</strong> ${pkg.transportation}</p>
+        <button onclick="showBookingForm()">Book Now</button></div></div>`
+
+
+
+    // Save the images array and initialize the carousel
+    currentImages = pkg.images;
+    currentImageIndex = 0;
+}
+
+// Carousel Functionality
+let currentImages = [];
+let currentImageIndex = 0;
+
+function nextImage() {
+    if (currentImages.length > 0) {
+        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+        document.getElementById("carousel-image").src = currentImages[currentImageIndex];
+        document.getElementById("image-index").innerText = `${currentImageIndex + 1} / ${currentImages.length}`;
+    }
+}
+
+function prevImage() {
+    if (currentImages.length > 0) {
+        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        document.getElementById("carousel-image").src = currentImages[currentImageIndex];
+        document.getElementById("image-index").innerText = `${currentImageIndex + 1} / ${currentImages.length}`;
+    }
+}
+
+
+        function showBookingForm() {
+            document.getElementById("booking-form").style.display = "block";
+        }
+
+        window.onload = loadPackages;
+    </script>
+</body>
+</html>
